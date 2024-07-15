@@ -1,0 +1,55 @@
+<section class="h-100 " style="background-color: white;">
+  <div class="  h-100">
+
+    <div class="row  d-flex justify-content-center align-items-center h-100">
+
+      <div class="col-12">
+        <button class="btn btn-outline-secondary mb-2 ml-3 pr-3 pl-3 btnToProducts" (click)="returnToProducts()">
+          <i class="bi bi-arrow-left me-2"> continuer vos achats</i>
+        </button>
+        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+          <div class="card-body p-0">
+            <div class="row g-0">
+              <div class="col-lg-8">
+                <div class="p-5">
+                  <div class="d-flex justify-content-between align-items-center mb-5">
+                    <h1 class="fw-bold mb-0 text-black">Panier</h1>
+                    <p
+                      class="mb-0 text-muted">{{(purchasedElementsNumber$|async) > 0 ? (purchasedElementsNumber$|async) + "items" : ""}}</p>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <p class="mb-0 "> {{(purchasedElementsNumber$|async) > 0 ? "" : "Votre panier est vide"}}</p>
+
+                  <div *ngFor="let item of purchasedElements$ | async">
+                    <app-panier-element [panierElement]="item"></app-panier-element>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 bg-grey">
+                <div class=" summary p-5">
+                  <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+                  <hr class="my-4">
+
+                  <div class="d-flex justify-content-between mb-4">
+                    <h5 class="text-uppercase">Total Taxes </h5>
+                    <h5>{{((totalTaxes$ | async) ? (totalTaxes$ | async) : 0.00) | currency:'EUR'}} </h5>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <div class="d-flex justify-content-between mb-5">
+                    <h5 class="text-uppercase">Total TTC</h5>
+                    <h5>{{((totalTTC$ | async) ? (totalTTC$ | async) : 0.00) | currency:'EUR'}}</h5>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

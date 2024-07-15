@@ -1,0 +1,42 @@
+.card-element{
+  height: 100%;
+  max-height:20rem ;
+  max-width:18rem ;
+
+}
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+.disabled {
+  opacity:0.5;
+}
+
+p{
+  color: #008991;
+  font-family: 'DINPro-CondBlack', 'Helvetica Neue', Helvetica, sans-serif, bold;
+}
+.addbtn {
+  height: 40px;
+  color:rgb(226, 26, 122);
+  border: 1px solid rgb(226, 26, 122);
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px !important;
+}
+.addbtn:hover{
+  background-color:rgb(226, 26, 122);
+  color:rgb(255, 255, 255)
+}
+.addnum{width: 50%;}
+
+.price {
+  font-family: 'DINPro-CondMedium', 'Helvetica Neue', Helvetica;
+  color: #e21a7a !important;
+  font-size: 1em;
+}
+
+.catsi {
+  font-size: 1em !important;
+}
+
+
